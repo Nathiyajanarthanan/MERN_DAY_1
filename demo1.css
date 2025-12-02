@@ -61,5 +61,25 @@ color: rgb(142, 127, 255);
     background-color: rgb(255, 254, 196);
     margin-bottom: 100px;
     margin-top: 50px;
+    
    
 }
+
+a:link {
+            color: blue;
+            text-decoration: none;
+        }
+
+  
+        a:visited {
+            color: purple;
+        }
+       
+        a:hover {
+            color: red;
+            text-decoration: underline;
+        }
+        
+        a:active {
+            color: green;
+        }
