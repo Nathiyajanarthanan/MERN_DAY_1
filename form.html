@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <h1>Form Registration</h1>
 </head>
 <body>
     <form>
@@ -41,8 +42,63 @@
     <br><br>
 
     <!-- Submit -->
+    <button type="submit">Submit</button><br><br>
+
+</form>
+<hr><hr>
+<form>
+
+    <!-- Name -->
+    <label>Name:</label>
+    <input type="text" name="name" placeholder="Enter your name" required>
+    <br><br>
+
+    <!-- Email -->
+    <label>Email:</label>
+    <input type="email" name="email" placeholder="Enter your email" required>
+    <br><br>
+
+    <!-- Password -->
+    <label>Password:</label>
+    <input type="password" name="password" placeholder="Enter password" required>
+    <br><br>
+
+    <!-- Date -->
+    <label>Select Date:</label>
+    <input type="date" name="date" required>
+    <br><br>
+
+    <!-- Time -->
+    <label>Select Time:</label>
+    <input type="time" name="time" required>
+    <br><br>
+
+    <!-- Month -->
+    <label>Select Month:</label>
+    <input type="month" name="month">
+    <br><br>
+
+    <!-- Week -->
+    <label>Select Week:</label>
+    <input type="week" name="week">
+    <br><br>
+
+    <!-- Course Selection -->
+    <label>Select Course:</label>
+    <select name="course" required>
+        <option value="">-- Select Course --</option>
+        <option value="C">C Programming</option>
+        <option value="CPP">C++ Programming</option>
+        <option value="Java">Java Programming</option>
+        <option value="Python">Python</option>
+        <option value="Web">Web Development</option>
+    </select>
+    <br><br>
+
+    <!-- Submit -->
     <button type="submit">Submit</button>
 
 </form>
+
 </body>
 </html>
