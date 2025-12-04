@@ -1,0 +1,14 @@
+.button{
+    color: aliceblue;
+    background-color: crimson;
+    border: none;
+    border-radius: 10px;
+    text-align: center;
+    font-size: larger;
+    border-width: 50px;
+    height:36px;
+    width:150px;
+    cursor:pointer;
+    margin-left: 160px;
+    border
+}

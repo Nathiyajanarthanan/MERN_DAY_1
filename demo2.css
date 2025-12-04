@@ -1,0 +1,175 @@
+.button{
+    color: aliceblue;
+    background-color: crimson;
+    border: none;
+    border-radius: 10px;
+    text-align: center;
+    font-size: larger;
+    border-width: 50px;
+    height:36px;
+    width:150px;
+    cursor:pointer;
+    margin-left: 160px;
+    border
+}
+.button:hover {
+  background-color:rgb(227, 64, 96);
+  opacity: 0.6;
+}
+div{
+    margin-top: 100px;
+    margin-left: 100px;
+    border: solid black 2px;
+    width:300px;
+    height:200px;
+    
+}
+ div h1{
+position:absolute;
+top:40px;
+left:140px;
+}
+div h2{
+    position:relative;
+    top:10px;
+    left:100px;
+}
+.stick {
+  position:fixed;
+  top: 100;
+}
+.one{
+    border-color: aquamarine;
+    width: 120px;
+    height: 100px;
+    background-color: aquamarine;
+    margin:10px;
+    position:relative;
+    top:50px;
+    left:50px;
+    z-index:5;
+}
+.two{
+    border-color: aquamarine;
+    width: 100px;
+    height: 100px;
+    background-color: rgb(148, 255, 127);
+    margin:10px;
+    position:relative;
+    right:10px;
+    z-index: 6;
+}
+.three{
+    border-color: aquamarine;
+    width: 120px;
+    height: 100px;
+    background-color: rgb(127, 236, 255);
+    margin:10px;
+    position:relative;
+    bottom: 50px;
+    left:50px;
+    z-index:7;
+}
+.four{
+    border-color: aquamarine;
+    width: 100px;
+    height: 100px;
+    background-color: rgb(127, 180, 255);
+    margin:10px;
+    position:relative;
+    bottom: 220px;
+    left:130px;
+    z-index:8;
+}
+.scrolling {
+  width: 300px;
+  height: 200px;
+  background-color: rgb(255, 80, 223);
+  overflow: scroll;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  background-color: DodgerBlue;
+  align-items: center;
+  width:500px;
+  height:400px;
+  flex-wrap: wrap;
+}
+
+.container div {
+  background-color: #f1f1f1;
+  margin: 10px;
+  padding: 20px;
+  font-size: 30px;
+  height:100px;
+}
+.container_row {
+  display: flex;
+  flex-direction: row;
+  background-color: DodgerBlue;
+  justify-content:center;
+  width:500px;
+  height:150px;
+ 
+}
+
+.container_row div {
+  background-color: #f1f1f1;
+  margin: 10px;
+  padding: 20px;
+  font-size: 30px;
+  height:100px;
+}
+* {
+  box-sizing: border-box;
+}
+ body {
+            
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: #f7f4f4;
+        }
+
+        .gal{
+           text-align: center;
+            padding: 20px;
+            
+        }
+
+        /* Gallery Container */
+        .gallery {
+            display: flex;
+            flex-direction:row;
+            flex-wrap: wrap;
+            gap: 5px;
+            padding: 20px;
+            justify-content: center;
+           height:450px;
+           width:900px;
+           background-color: darkgrey;
+        }
+
+        /* Image Card */
+        .gallery img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;  /* Crop neatly */
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s;
+        }
+
+        /* Hover Effect */
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Make Images Responsive */
+        @media(max-width: 768px) {
+            .gallery img {
+                width: 90%;
+                height:auto;
+            }
+        }

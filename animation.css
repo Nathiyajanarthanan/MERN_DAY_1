@@ -1,0 +1,65 @@
+@keyframes move {
+    from{
+        transform: translateY(0);
+    }
+    to{
+        transform: translateY(20px);
+    }
+}
+.ani{
+    
+    margin-bottom: 10px;
+    animation:move 2s infinite alternate;
+}
+@keyframes growbox{
+    0%{
+        width:50px;
+        height:50px;
+    }
+    50%{
+        background-color: blueviolet;
+    }
+    100%{
+        width:100px;
+        height:100px;
+    }
+}
+.ani1{
+   width:50px;
+   height:50px;
+   background-color: blue;
+   margin-bottom: 10px;
+   text-align: center;
+   animation:growbox 2s infinite alternate;
+}
+@keyframes fade {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 10;
+    }
+}
+.ani2{
+   width:50px;
+   height:50px;
+   background-color: blue;
+   margin-bottom: 10px;
+   animation:fade 2s infinite alternate; 
+}
+@keyframes rot {
+   from{
+    transform: rotate(0deg);
+   }
+   to{
+    transform: rotate(360deg);
+   }
+}
+.ani3{
+    width:50px;
+   height:50px;
+   background-color: blue;
+   margin-bottom: 10px;
+   animation:rot 2s infinite alternate; 
+}
+    
