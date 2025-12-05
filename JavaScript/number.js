@@ -237,3 +237,86 @@ const ccombined = [...carr1, ...carr2];
 console.log(ccombined);
 
  */
+//SYCHONRIZED
+/* console.log("start");//frist
+setTimeout(()=>{
+    console.log("This run after");//stack empty call back to stack it excueted
+    
+},2000)
+console.log("end");//second
+
+setTimeout(()=>{
+    console.log("Tea ");
+
+    setTimeout(()=>{
+    console.log("bread");
+
+    setTimeout(()=>{
+    console.log("fried egg");
+    
+},2000)
+
+},3000)
+
+},4000)
+ */
+
+/* let icepro=new Promise((resolve,reject)=>{
+    let iceready=true;//true or false 
+    if(iceready){
+        console.log("Ice cream ready...");       
+    }
+    else{
+        console.log("No Ice cream Today...");      
+    }
+});
+icepro.then((message)=>{
+    console.log("Yay! "+message);
+   
+})
+.catch((error)=>{
+    console.log("Oops "+error);
+    
+});
+ */
+//Await
+/* let icepro=new Promise((resolve,reject)=>{
+    let iceready=true;//true or false 
+    if(iceready){
+        console.log("Ice cream ready...");       
+    }
+    else{
+        console.log("No Ice cream Today...");      
+    }
+});
+async function getIce() {
+    try{
+        let message=await icepro;
+            console.log("Yay! "+message);
+
+    }catch(error){
+        console.log("Oops "+error);
+    }
+} */
+/* const [a,b,c]=[10,20,30];
+console.log(a);
+console.log(b);
+console.log(c);
+const [frist,...rest]=[1,2,3,4,5];
+console.log(frist);
+console.log(rest); */
+/* const user={name:"Nathiya",age:22};
+const {name,age}=user;
+console.log(name);
+console.log(age); */
+
+//with destructuring
+function greet({name,age}){
+    console.log("Hello "+ name + " you are "+ age + " years old");
+}
+greet({
+    name:"Moni",
+    age:19
+});
+
+

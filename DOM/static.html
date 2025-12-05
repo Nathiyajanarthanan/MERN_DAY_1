@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Magical JavaScript Quiz ✨</title>
+
+  <style>
+    /* ------------------ Global Background ------------------ */
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      font-family: "Poppins", sans-serif;
+      background: radial-gradient(circle at top, #ffe7fa, #c79aff, #5f2ad7);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    /* Magical floating stars */
+    .stars {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      background: url('https://i.ibb.co/4Vw4gP8/stars.png');
+      animation: floatStars 30s linear infinite;
+      opacity: 0.3;
+    }
+
+    @keyframes floatStars {
+      from { transform: translateY(0); }
+      to { transform: translateY(-2000px); }
+    } 
+
+    /* ------------------ Quiz Box ------------------ */
+    .quiz-container {
+      position: relative;
+      background: rgba(255, 255, 255, 0.25);
+      backdrop-filter: blur(12px);
+      border-radius: 25px;
+      padding: 30px;
+      width: 450px;
+      box-shadow: 0 0 30px rgba(255,255,255,0.3), 0 0 50px rgba(180,64,255,0.5);
+      animation: fadeIn 1s ease-out;
+      border: 2px solid rgba(255,255,255,0.4);
+    }
+
+    @keyframes fadeIn {
+      from { transform: scale(0.9); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    h2 {
+      text-align: center;
+      color: #fff;
+      font-size: 26px;
+      font-weight: bold;
+      text-shadow: 0 0 10px #fff, 0 0 20px #9f76ff;
+    }
+
+    /* ------------------ Question Style ------------------ */
+    .question {
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: 600;
+      color: #fefefe;
+      text-shadow: 0 0 5px rgba(0,0,0,0.4);
+    }
+
+    /* ------------------ Options ------------------ */
+    .option {
+      background: rgba(255,255,255,0.2);
+      margin: 15px 0;
+      padding: 12px 15px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: 0.4s;
+      color: #fff;
+    }
+
+    .option:hover {
+      transform: scale(1.04);
+      background: rgba(255,255,255,0.35);
+      border-color: #fff;
+      box-shadow: 0 0 15px rgba(255,255,255,0.4);
+    }
+
+    .option input {
+      margin-right: 12px;
+      transform: scale(1.3);
+      cursor: pointer;
+    }
+
+    /* ------------------ Button ------------------ */
+    button {
+      margin-top: 20px;
+      width: 100%;
+      padding: 12px;
+      font-size: 18px;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      background: linear-gradient(135deg, #8c52ff, #ff00dd);
+      color: white;
+      box-shadow: 0 0 15px rgba(255,255,255,0.4);
+      transition: 0.3s;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 25px rgba(255,255,255,0.6);
+    }
+
+    .result {
+      margin-top: 20px;
+      text-align: center;
+      font-size: 22px;
+      font-weight: bold;
+      color: #fff;
+      text-shadow: 0 0 10px #fff, 0 0 20px #ff77ff;
+    }
+
+  </style>
+</head>
+
+<body>
+  <div class="stars"></div>
+  
+  <div class="quiz-container">
+    <h2>✨ Magical JavaScript Quiz ✨</h2>
+
+    <div id="quiz">
+      <div class="question" id="question">Question appears here</div>
+
+      <label class="option">
+        <input type="radio" name="option" value="a"> <span id="optA"></span>
+      </label>
+
+      <label class="option">
+        <input type="radio" name="option" value="b"> <span id="optB"></span>
+      </label>
+
+      <label class="option">
+        <input type="radio" name="option" value="c"> <span id="optC"></span>
+      </label>
+
+      <label class="option">
+        <input type="radio" name="option" value="d"> <span id="optD"></span>
+      </label>
+
+      <button onclick="nextQuestion()">Next</button>
+    </div>
+
+    <div class="result" id="result"></div>
+  </div>
+
+  <script>
+    const quizData = [
+      { question: "1. Which keyword declares a variable?", a: "var", b: "int", c: "num", d: "float", answer: "a" },
+      { question: "2. JS runs in the ______?", a: "Compiler", b: "Machine", c: "Browser", d: "Terminal", answer: "c" },
+      { question: "3. Which selects an HTML element?", a: "querySelector()", b: "getItem()", c: "readFile()", d: "getCSS()", answer: "a" },
+      { question: "4. JS is ______?", a: "Compiled", b: "Interpreted", c: "Binary", d: "Machine code", answer: "b" },
+      { question: "5. Which symbol starts a comment?", a: "!!", b: "//", c: "::", d: "**", answer: "b" },
+      { question: "6. How to write output?", a: "print()", b: "cout()", c: "document.write()", d: "show()", answer: "c" },
+      { question: "7. Which is a loop?", a: "go()", b: "jump()", c: "for", d: "hello()", answer: "c" },
+      { question: "8. Array is written using?", a: "{ }", b: "( )", c: "[ ]", d: "⟨ ⟩", answer: "c" },
+      { question: "9. To convert string to number?", a: "toInt()", b: "parseInt()", c: "int()", d: "change()", answer: "b" },
+      { question: "10. Who invented JavaScript?", a: "Elon Musk", b: "Bill Gates", c: "Brendan Eich", d: "Dennis Ritchie", answer: "c" }
+    ];
+
+    let index = 0;
+    let score = 0;
+
+    function loadQuestion() {
+      const q = quizData[index];
+      document.getElementById("question").innerText = q.question;
+      document.getElementById("optA").innerText = q.a;
+      document.getElementById("optB").innerText = q.b;
+      document.getElementById("optC").innerText = q.c;
+      document.getElementById("optD").innerText = q.d;
+    }
+
+    loadQuestion();
+
+    function nextQuestion() {
+      const options = document.getElementsByName("option");
+      let selected = null;
+
+      options.forEach(opt => {
+        if (opt.checked) {
+          selected = opt.value;
+          opt.checked = false;
+        }
+      });
+
+      if (!selected) {
+        alert("Please select an answer ✨");
+        return;
+      }
+
+      if (selected === quizData[index].answer) score++;
+
+      index++;
+
+      if (index < quizData.length) {
+        loadQuestion();
+      } else {
+        document.getElementById("quiz").style.display = "none";
+        document.getElementById("result").innerHTML =
+          `🌟 Your Magical Score: <span style="color:#fff">${score}</span> / ${quizData.length}`;
+      }
+    }
+  </script>
+
+</body>
+</html>
