@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colorful Site - Semantic UI</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+    <style>
+        .gradient-bg { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+        .color-section { padding: 4em 0; }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <div class="ui inverted vertical masthead center aligned segment gradient-bg">
+        <div class="ui text container">
+            <div class="ui huge inverted header">Welcome to Colorful World</div>
+            <h2 class="ui inverted header">Modern design with vibrant colors</h2>
+            <div class="ui huge primary button">Get Started <i class="right arrow icon"></i></div>
+        </div>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <main class="ui text container" style="margin-top: 2em;">
+        <!-- Home Section -->
+        <section id="home" class="color-section">
+            <div class="ui huge header blue">Features</div>
+            <div class="ui three column stackable cards">
+                <div class="card">
+                    <div class="content">
+                        <div class="header">Responsive</div>
+                        <div class="description">Works on all devices</div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="content">
+                        <div class="header">Colorful</div>
+                        <div class="description">Vibrant gradients & palettes</div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="content">
+                        <div class="header">Fast</div>
+                        <div class="description">Lightning quick loading</div>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align:center; margin-top:2em;">
+                <button class="ui huge teal button" onclick="showSection('login')">Login Now</button>
+            </div>
+        </section>
+
+        <!-- Login Section -->
+        <section id="login" class="ui center aligned color-section" style="display:none;">
+            <div class="ui segment" style="max-width:450px; margin:0 auto; background: linear-gradient(45deg, #ff6b6b, #feca57);">
+                <h2 class="ui white header">
+                    <i class="user icon"></i> Login
+                </h2>
+                <form class="ui large form">
+                    <div class="field">
+                        <div class="ui left icon input">
+                            <i class="user icon"></i>
+                            <input type="text" placeholder="Email">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui left icon input">
+                            <i class="lock icon"></i>
+                            <input type="password" placeholder="Password">
+                        </div>
+                    </div>
+                    <button class="ui fluid large violet button">Login</button>
+                </form>
+                <button class="ui small labeled icon button" onclick="showSection('home')">
+                    <i class="home icon"></i> Back to Home
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="ui inverted vertical footer segment gradient-bg">
+        <div class="ui container">
+            <div class="ui stackable inverted divided grid">
+                <div class="seven wide column">
+                    <h4 class="ui inverted header">Colorful Site</h4>
+                    <p>Built with Semantic UI for modern, colorful experiences.</p>
+                </div>
+                <div class="three wide column">
+                    <h4 class="ui inverted header">Links</h4>
+                    <div class="ui inverted link list">
+                        <a class="item" href="#">Privacy</a>
+                        <a class="item" href="#">Terms</a>
+                        <a class="item" href="#">Support</a>
+                    </div>
+                </div>
+                <div class="three wide column">
+                    <h4 class="ui inverted header">Contact</h4>
+                    <p>hello@site.com</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function showSection(section) {
+            $('#home, #login').hide();
+            $('#' + section).fadeIn();
+        }
+        $('.ui.checkbox').checkbox();
+    </script>
+</body>
+</html>
